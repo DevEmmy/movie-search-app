@@ -7,8 +7,9 @@ const Movies = () => {
   const [movies,setMovies] = useState([])
   const [searchKeyword, setSearchKeyword] = useState(null)
 
-  const apiKey = process.env.API_KEY
+  
   const searchMovie = async ()=>{
+    const apiKey = process.env.API_KEY
     await axios.get(`https://www.omdbapi.com/?s=${searchKeyword}&apikey=${apiKey}`)
     .then(resp => {
        console.log(resp.data.Search);
