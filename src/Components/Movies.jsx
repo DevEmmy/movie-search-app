@@ -9,7 +9,7 @@ const Movies = () => {
 
   const apiKey = process.env.API_KEY
   const searchMovie = async ()=>{
-    await axios.get(`https://www.omdbapi.com/?s=${searchKeyword}&apikey=`)
+    await axios.get(`https://www.omdbapi.com/?s=${searchKeyword}&apikey=${apiKey}`)
     .then(resp => {
        console.log(resp.data.Search);
        if(resp.data.Search){
